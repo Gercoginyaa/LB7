@@ -1,0 +1,66 @@
+﻿<Window x:Class="OOP_LB7.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OOP_LB7"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="550" Width="700" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+           <RowDefinition Height="30"/>
+           <RowDefinition Height="25"/>
+           <RowDefinition Height="250"/>
+           <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+           <Grid.ColumnDefinitions>
+               <ColumnDefinition Width="*"/>
+               <ColumnDefinition Width="0.8*"/>
+           </Grid.ColumnDefinitions>
+           <TextBlock Grid.Column="0" Text="Введите количесто элементов массива: " 
+                      FontSize="18" FontFamily="Times New Roman" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10 0 0 0"/>
+           <TextBox Grid.Column="1" x:Name="ArrayLength" Margin="0 0 25 0" FontSize="18" TextChanged="ArrayLength_OnTextChanged"/>
+        </Grid>
+        <TextBlock Grid.Row="1" Text="Елементы массива:" HorizontalAlignment="Center" FontSize="18" FontFamily="Times New Roman"/>
+        <Border Grid.Row="2" BorderBrush="Black" BorderThickness="1">
+            <ScrollViewer Grid.Row="2">
+            <TextBlock x:Name="ArrayContent" TextWrapping="Wrap" FontSize="15"/>
+        </ScrollViewer>
+        </Border>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2.5*"/>
+                <ColumnDefinition Width="0.5*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button Grid.Column="2" Grid.RowSpan="5" x:Name="Refresh" Content="Refresh" Margin="30" Click="Refresh_OnClick"
+                    ToolTip="Обновить значение чисел" BorderBrush="Gray" Cursor="Hand" Background="White">
+            </Button>
+            
+            <Border Grid.Row="0" Grid.Column="0" Grid.RowSpan="5" BorderBrush="Black" BorderThickness="1"/>
+
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Наименьшее значение:" FontSize="14"/>
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Наибольшее значение:" FontSize="14"/>
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="Сумма элементов массива:" FontSize="14"/>
+            <TextBlock Grid.Row="3" Grid.Column="0" Text="Среднее арифметическое:" FontSize="14"/>
+            <TextBlock Grid.Row="4" Grid.Column="0" Text="Нечётные элементы массива:" FontSize="14"/>
+
+            <TextBlock x:Name="Min" Grid.Row="0" Grid.Column="1" FontSize="14"/>
+            <TextBlock x:Name="Max" Grid.Row="1" Grid.Column="1" FontSize="14"/>
+            <TextBlock x:Name="Sum"  Grid.Row="2" Grid.Column="1" FontSize="14"/>
+            <TextBlock x:Name="Average" Grid.Row="3" Grid.Column="1" FontSize="14"/>
+            <ScrollViewer Grid.Row="4" Grid.Column="1" HorizontalScrollBarVisibility="Visible">
+                <TextBlock x:Name="Odd" FontSize="14"/>
+            </ScrollViewer>
+
+        </Grid>
+    </Grid>
+</Window>
